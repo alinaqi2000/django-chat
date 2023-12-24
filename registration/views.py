@@ -1,7 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from chat.models import UserProfile
+
+
+def logOut(request):
+    logout(request)
+    return redirect('/login')
 
 
 def SignUp(request):
@@ -29,10 +34,10 @@ def SignUp(request):
                 form.save()
                 user = authenticate(username=username, password=password)
                 login(request, user)
-                profile = UserProfile(email=email, name=name, username=username)
+                profile = UserProfile(
+                    email=email, name=name, username=username)
                 profile.save()
                 return redirect("/")
     else:
         form = SignUpForm()
-    return render(request, "registration/signup.html", {"form": form, "heading": "Sign Up", "message": message})
-
+    return render(request, "registration/SignUp.html", {"form": form, "heading": "Sign Up", "message": message})

@@ -1,4 +1,4 @@
-"""PyChat URL Configuration
+"""Chatsy URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -18,6 +18,7 @@ from django.urls import path, include
 from registration import views as rv
 
 urlpatterns = [
+    path('logout/', rv.logOut, name="logout"),
     path('admin/', admin.site.urls),
     path("", include("chat.urls")),
     path('signup/', rv.SignUp, name="register"),

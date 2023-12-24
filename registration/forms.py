@@ -10,7 +10,8 @@ class SignUpForm(forms.Form):
     name = forms.CharField(max_length=25, label="Name")
     email = forms.EmailField(label="Email")
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label="Confirm Password", widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label="Confirm Password", widget=forms.PasswordInput)
 
     def validate_username(self):
         username = self.cleaned_data['username']
@@ -42,5 +43,3 @@ class SignUpForm(forms.Form):
             self.cleaned_data['password1']
         )
         return user
-
-

@@ -1,5 +1,11 @@
 {% load static %}
 
+*{
+    color:#ddd;
+}
+body{
+    background-color: #181818;
+}
 .sidenav{
     height: 100%;
     width: 320px;
@@ -7,7 +13,7 @@
     top: 0;
     left: 0;
     z-index: 20;
-    background-color: #a6c7ff;
+    background-color: #15181e;
     overflow-y: auto;
     overflow-x: auto;
     padding-top: 20px;
@@ -22,7 +28,7 @@
 }
 
 .sidenav a:hover{
-    color: #f1f1f1;
+    color: #4c4c4c;
 }
 
 
@@ -31,6 +37,7 @@
     overflow: hidden;
     margin-left: 320px;
     padding: 0px 10px;
+    background: #181818;
 }
 
 
@@ -49,7 +56,7 @@
 
 #myInput {
     box-sizing: border-box;
-    background-image: url("{% static 'images/searchicon.png' %}")
+    background-image: url("{% static 'images/searchicon.png' %}");
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
@@ -71,17 +78,17 @@
 
 .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: #f6f6f6;
+    position: fixed;
+    background-color: #17171a;
     min-width: 230px;
     overflow: auto;
-    border: 1px solid #ddd;
+    border: 1px solid #4c4c4c;
     z-index: 20;
 }
 
 .dropdown-content a {
     z-index: 10;
-    color: black;
+    color: #ddd;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -91,3 +98,21 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+.friends ul li {
+    background: #17171a;
+    box-shadow: 0 0 8px rgb(0 0 0 / 25%);
+  }
+  .friends ul li:hover {
+    background: #181818;
+  }
+  .friends .row {
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+  .friends .row p {
+    margin: 0px;
+  }
+  
